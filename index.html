@@ -30,12 +30,37 @@
             50% { opacity: 1; }
             100% { transform: translateY(-500px); opacity: 0; }
         }
+
+        /* Styling for the button */
+        .click-btn {
+            background-color: #ff69b4;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .click-btn:hover {
+            background-color: #ff3385;
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .click-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
     </style>
 </head>
 <body>
     <h1>🎉 Happy Birthday, Suma! 🎂</h1>
     <p>Click the button below for a surprise! 🎁</p>
-    <button onclick="showAnimation()">Click Me 🎈</button>
+    <button class="click-btn" onclick="showAnimation()">Click Me 🎈</button>
     <div class="birthday-box" id="animationBox">
         <h2>🎊 Wishing you a day full of joy, laughter, and love! 🎊</h2>
         <img src="https://source.unsplash.com/500x300/?birthday,cake" alt="Birthday Cake">
