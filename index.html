@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suma! 🎂</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffccff;
+        }
+        h1 {
+            color: #ff3399;
+        }
+        .birthday-box {
+            display: none;
+            margin-top: 20px;
+        }
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(100px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-500px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy Birthday, Suma! 🎂</h1>
+    <p>Click the button below for a surprise! 🎁</p>
+    <button onclick="showAnimation()">Click Me 🎈</button>
+    <div class="birthday-box" id="animationBox">
+        <h2>🎊 Wishing you a day full of joy, laughter, and love! 🎊</h2>
+        <img src="https://source.unsplash.com/500x300/?birthday,cake" alt="Birthday Cake">
+        <p>Enjoy your special day! ❤️</p>
+    </div>
+
+    <script>
+        function showAnimation() {
+            document.getElementById('animationBox').style.display = 'block';
+            for (let i = 0; i < 10; i++) {
+                let balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.backgroundColor = getRandomColor();
+                document.body.appendChild(balloon);
+                setTimeout(() => balloon.remove(), 5000);
+            }
+        }
+        
+        function getRandomColor() {
+            const colors = ['#ff5733', '#ffbd33', '#33ff57', '#33a1ff', '#b833ff'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>
